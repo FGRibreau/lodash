@@ -8,7 +8,7 @@
 'use strict';
 
 
-// lodash.com/docs
+// http://lodash.com/docs
 var _   = require('lodash');
 
 
