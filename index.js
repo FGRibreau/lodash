@@ -7,6 +7,7 @@
  */
 'use strict';
 
+// https://github.com/nicholascloud/l33teral ?
 
 // http://lodash.com/docs
 var _   = require('lodash');
@@ -21,6 +22,12 @@ _.mixin({
     return Object.keys(obj).reduce(function(m, k) {
       return f.call(ctx, obj[k], k, obj) ? (m[k] = obj[k], m) : m;
     }.bind(obj), {});
+  },
+  pluckObject: function(obj, prop){
+    return _.reduce(obj, function(memo, object, key){
+      memo[key] = object[prop];
+      return memo;
+    }, {});
   }
 });
 
